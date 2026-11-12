@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rica Calica | Portfolio</title>
+  <link rel="stylesheet" href="rica_fixed.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="#home">Calica Rica Santiago<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">Personal Info</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#java">Java Code</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="tag">BS INFORMATION TECHNOLOGY</p>
+        <h1>Hello, I'm <span>Rica Calica</span></h1>
+        <p>A first-year BSIT student who is interested in technology,
+          computers, and learning new things.</p>
+        <a class="button" href="#about">Know More About Me</a>
+      </div>
+      <div class="profile-photo">
+        <img src="cariiii.jpg" alt="Rica Calica">
+      </div>
+    </section>
+
+    <!-- PERSONAL INFORMATION -->
+    <section id="about" class="section">
+      <p class="tag">GET TO KNOW ME</p>
+      <h2>Personal Information</h2>
+      <div class="card">
+        <p><strong>Name:</strong> Rica S. Calica</p>
+        <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+        <p><strong>School:</strong> Our Lady of the Sacred Heart College of Guimba, Inc.</p>
+        <p><strong>Address:</strong> Guimba, Nueva Ecija</p>
+        <p><strong>Email:</strong> calicarica7@gmail.com</p>
+        <p class="intro">I am a simple and friendly student. I may be quiet at first,
+          but I enjoy talking and spending time with people once I feel comfortable.
+          I like drawing, listening to music, watching videos, and taking pictures
+          of flowers and sunsets. I am also interested in learning more about
+          technology and computers.</p>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <p class="tag">MY SCHOOL JOURNEY</p>
+      <h2>Educational Background</h2>
+      <div class="timeline">
+        <article class="card">
+          <span class="year">Elementary</span>
+          <h3>Guimba East Elementary School</h3>
+          <p>Kinder to Grade 6</p>
+        </article>
+        <article class="card">
+          <span class="year">Junior High School</span>
+          <h3>Bartolome Sangalang National High School</h3>
+          <p>Grades 7 to 10</p>
+        </article>
+        <article class="card">
+          <span class="year">Senior High School</span>
+          <h3>Bonifacio Luz Natividad Educational Foundation, Inc.</h3>
+          <p>HUMSS Strand</p>
+        </article>
+        <article class="card">
+          <span class="year">College</span>
+          <h3>Our Lady of the Sacred Heart College of Guimba, Inc.</h3>
+          <p>BS Information Technology</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <p class="tag">WHAT I CAN DO</p>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="card"><h3>Basic HTML</h3><p>Creating the structure of a simple webpage.</p></div>
+        <div class="card"><h3>Basic CSS</h3><p>Adding colors, styles, and layouts to webpages.</p></div>
+        <div class="card"><h3>Basic Java</h3><p>Writing simple programs using variables, loops, and conditions.</p></div>
+        <div class="card"><h3>Communication</h3><p>Sharing ideas and working with classmates.</p></div>
+        <div class="card"><h3>Creativity</h3><p>Making simple designs and sharing creative ideas.</p></div>
+        <div class="card"><h3>Willingness to Learn</h3><p>Learning new things and improving my skills through practice.</p></div>
+      </div>
+    </section>
+   
+    
+<!-- JAVA CODE -->
+<section id="java" class="section">
+  <p class="tag">MY PROJECT</p>
+  <h2>Java Code</h2>
+
+  <div class="game-card">
+    <h3>Cycling Guessing Game</h3>
+
+    <p>A simple Java game where players guess
+    which cyclist traveled farther.</p>
+
+    <div class="game-info">
+      <span>5 Lives</span>
+      <span>5 Rounds</span>
+      <span>Score System</span>
+    </div>
+
+    <pre><code>import java.util.Scanner;
+import java.util.Random;
+
+public class CyclingGuessGame {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Random random = new Random();
+
+        int score = 0;
+        int lives = 5;
+        int rounds = 5;
+
+        System.out.println("CYCLING GUESSING GAME");
+        System.out.println("Guess who traveled farther!");
+        System.out.println("You have 5 lives!");
+
+        for (int i = 1; i <= rounds; i++) {
+            if (lives == 0) {
+                break;
+            }
+
+            int cyclistA = random.nextInt(50) + 1;
+            int cyclistB = random.nextInt(50) + 1;
+
+            System.out.println("ROUND " + i);
+            System.out.println("Cyclist A: " + cyclistA + " km");
+            System.out.println("Cyclist B: " + cyclistB + " km");
+
+            if (cyclistA == cyclistB) {
+                System.out.println("It's a tie!");
+                continue;
+            }
+
+            System.out.print("Who traveled farther? (A/B): ");
+            String guess = input.next().toUpperCase();
+
+            if ((guess.equals("A") && cyclistA > cyclistB) ||
+                (guess.equals("B") && cyclistB > cyclistA)) {
+                System.out.println("Correct! +1 point!");
+                score++;
+            } else {
+                System.out.println("Wrong guess!");
+                lives--;
+                System.out.println("You lost 1 life!");
+            }
+
+            System.out.println("Score: " + score);
+            System.out.println("Lives: " + lives);
+        }
+
+        System.out.println("Final Score: " + score);
+        System.out.println("Remaining Lives: " + lives);
+
+        if (lives == 0) {
+            System.out.println("GAME OVER!");
+        } else {
+            System.out.println("GAME FINISHED!");
+        }
+
+        if (score == 5) {
+            System.out.println("Cycling Champion!");
+        } else if (score >= 3) {
+            System.out.println("Good job!");
+        } else {
+            System.out.println("Try again!");
+        }
+    }
+}</code></pre>
+  </div>
+</section>
